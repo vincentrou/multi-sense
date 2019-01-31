@@ -1,0 +1,2 @@
+psutil==5.5.0
+influxdb==5.2.1
