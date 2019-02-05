@@ -2,7 +2,7 @@
 
 ## Influxdb
 
-`sudo apt install influxdb`
+https://docs.influxdata.com/influxdb/v1.7/introduction/installation/
 
 ## Use the code
 
