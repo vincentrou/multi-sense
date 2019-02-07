@@ -2,10 +2,8 @@ import time
 import psutil
 from influxdb import InfluxDBClient
 
-influx_client = InfluxDBClient('localhost', 8086, database='cpu-sense')
+influx_client = InfluxDBClient('influxdb', 8086, database='cpu-sense')
 influx_client.create_database('cpu-sense')
-
-f = open('/sys/class/thermal/thermal_zone0/temp', 'r')
 
 while True:
     measurement = [
@@ -17,4 +15,4 @@ while True:
         }
     ]
     influx_client.write_points(measurement)
-    time.sleep(1)
+    time.sleep(10)

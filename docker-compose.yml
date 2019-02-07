@@ -4,11 +4,25 @@ volumes:
 services:
   influxdb:
     image: influxdb:1.7
+    restart: always
+    ports:
+      - "8086:8086"
     volumes:
       - 'persitent-storage:/var/lib/influxdb'
   grafana:
     image: grafana/grafana:5.4.3
+    restart: always
     ports:
       - "3000:3000"
     volumes:
       - 'persitent-storage:/var/lib/grafana'
+  sensor:
+    build: .
+    restart: always
+    links:
+      - influxdb
+    environment:
+      - INFLUX_HOST=influxdb
+    depends_on:
+      - influxdb
+      - grafana
