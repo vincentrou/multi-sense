@@ -18,3 +18,4 @@ while True:
     ]
     influx_client.write_points(measurement)
     time.sleep(1)
+

@@ -12,8 +12,11 @@ services:
       - "3000:3000"
     volumes:
       - 'persitent-storage:/var/lib/grafana'
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    env_file:
+      - ./grafana/config.monitoring
   sensor:
-    build: .
+    build: ./sensor
     restart: always
     environment:
       - INFLUX_HOST=influxdb

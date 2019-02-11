@@ -1,0 +1,9 @@
+datasources:
+  - name: Influxdb
+    type: influxdb
+    access: proxy
+    database: cpu-sense
+    user: root
+    password: root
+    url: http://influxdb:8086
+    
