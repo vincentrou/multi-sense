@@ -23,6 +23,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
+      "datasource": "Influxdb",
       "fill": 1,
       "gridPos": {
         "h": 15,
@@ -57,7 +58,7 @@
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "10s"
               ],
               "type": "time"
             },
@@ -170,5 +171,5 @@
   "timezone": "",
   "title": "CPU Usage",
   "uid": "OwisVIuiz",
-  "version": 2
+  "version": 3
 }
