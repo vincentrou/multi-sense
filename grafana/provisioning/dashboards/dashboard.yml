@@ -1,0 +1,6 @@
+- name: 'CPU usage'
+  org_id: 1
+  folder: ''
+  type: 'file'
+  options:
+    folder: '/etc/grafana/provisioning/dashboards'
