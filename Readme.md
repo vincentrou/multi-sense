@@ -12,7 +12,7 @@ http://docs.grafana.org/installation/debian/
 
 `git clone`
 
-`cd influxdb`
+`cd influxdb/sensor`
 
 `python3 -m pip install -r requirements.txt`
 
