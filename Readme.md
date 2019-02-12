@@ -1,4 +1,3 @@
-
 # Docker
 
 * ## Installation
@@ -41,5 +40,7 @@ http://docs.grafana.org/installation/debian/
 
 `http://localhost:3000`
 
-  * Ajouter une source de donnée influxdb avec comme nom de base de donnée "cpu-sense"
-  * Ajouter un graphique pour afficher usage CPU dans le temps
+* user : admin
+* pwd : admin
+* Ajouter une source de donnée influxdb avec comme nom de base de donnée "cpu-sense"
+* Ajouter un graphique pour afficher usage CPU dans le temps
