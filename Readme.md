@@ -1,14 +1,33 @@
-# Installation
 
-## Influxdb
+# Docker
+
+* ## Installation
+
+### Docker
+
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+### Docker compose
+
+https://docs.docker.com/compose/install/
+
+* ## Use the code
+
+`docker-compose up`
+
+# Manuellement
+
+* ## Installation
+
+### Influxdb
 
 https://docs.influxdata.com/influxdb/v1.7/introduction/installation/
 
-## Grafana
+### Grafana
 
 http://docs.grafana.org/installation/debian/
 
-# Use the code
+* ## Use the code
 
 `git clone`
 
@@ -18,7 +37,7 @@ http://docs.grafana.org/installation/debian/
 
 `python3 cpu_influx.py`
 
-# Configure Grafana
+# Connect to Grafana
 
 `http://localhost:3000`
 
