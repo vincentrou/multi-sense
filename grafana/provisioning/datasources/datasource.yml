@@ -7,4 +7,6 @@ datasources:
     user: root
     password: root
     url: http://influxdb:8086
+    isDefault: true
+    editable: true
     
