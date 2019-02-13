@@ -18,17 +18,11 @@ while True:
     data = bme280.sample(bus, address)
     measurement = [
         {
-            'measurement': 'temperature',
+            'measurement': 'bme280',
             'fields': {
-                'value': data.temperature
-            },
-            'measurement': 'pressure',
-            'fields': {
-                'value': data.pressure
-            },
-            'measurement': 'humidity',
-            'fields': {
-                'value': data.humidity
+                'temperature': data.temperature,
+                'pressure': data.pressure,
+                'humidity': data.humidity
             }
         }
     ]
