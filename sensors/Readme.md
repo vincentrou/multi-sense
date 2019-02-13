@@ -5,3 +5,4 @@
   * Générer les requirements à la main ou avec 'pipreqs'
   * Mettre à jour le Dockerfile du nouveau capteur
   * Ajouter le capteur dans le docker-compose.yml
+  * Enregistrer un dashboard dans grafana/provisioning/dashboards
