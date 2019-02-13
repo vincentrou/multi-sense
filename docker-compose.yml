@@ -3,7 +3,7 @@ volumes:
   persitent-storage:
 services:
   influxdb:
-    image: influxdb:1.7-alpine
+    image: influxdb:1.7
     restart: always
   grafana:
     image: grafana/grafana:5.4.3
