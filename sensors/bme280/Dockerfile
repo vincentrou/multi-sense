@@ -7,4 +7,4 @@ WORKDIR /usr/src/app
 
 RUN python3 -m pip install -r requirements.txt
 
-CMD ["python3", "/usr/src/app/bme280.py"]
+CMD ["python3", "/usr/src/app/bme280_influx.py"]

@@ -15,8 +15,18 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
       - ./grafana/config.monitoring
-  sensor:
+  cpu_load:
     build: ./sensors/cpu_load
+    restart: always
+    environment:
+      - INFLUX_HOST=influxdb
+    depends_on:
+      - influxdb
+      - grafana
+  bme280:
+    build: ./sensors/bme280
+    devices:
+      - "/dev/i2c-1"
     restart: always
     environment:
       - INFLUX_HOST=influxdb
