@@ -4,13 +4,14 @@ import psutil
 from influxdb import InfluxDBClient
 
 influx_host = os.getenv('INFLUX_HOST', 'localhost')
-influx_client = InfluxDBClient(host=influx_host, database='cpu-sense')
-influx_client.create_database('cpu-sense')
+influx_dbname = os.getenv('INFLUX_DBNAME', 'multi-sense')
+influx_client = InfluxDBClient(host=influx_host, database=influx_dbname)
+influx_client.create_database(influx_dbname)
 
 while True:
     measurement = [
         {
-            'measurement': 'CPU Usage',
+            'measurement': 'cpu_load',
             'fields': {
                 'value': float(psutil.cpu_percent(0))
             }

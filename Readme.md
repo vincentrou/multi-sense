@@ -30,11 +30,11 @@ http://docs.grafana.org/installation/debian/
 
 `git clone`
 
-`cd influxdb/sensor`
+`cd influxdb/sensors/sensor_driver`
 
 `python3 -m pip install -r requirements.txt`
 
-`python3 cpu_influx.py`
+`python3 sensor_driver.py`
 
 # Connect to Grafana
 
@@ -42,5 +42,5 @@ http://docs.grafana.org/installation/debian/
 
 * user : admin
 * pwd : admin
-* Ajouter une source de donnée influxdb avec comme nom de base de donnée "cpu-sense"
-* Ajouter un graphique pour afficher usage CPU dans le temps
+* Ajouter une source de donnée influxdb avec comme nom de base de donnée "multi-sense"
+* Ajouter un graphique pour afficher les données dans le temps

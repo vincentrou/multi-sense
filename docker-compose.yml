@@ -16,7 +16,7 @@ services:
     env_file:
       - ./grafana/config.monitoring
   sensor:
-    build: ./sensor
+    build: ./sensors/cpu_load
     restart: always
     environment:
       - INFLUX_HOST=influxdb

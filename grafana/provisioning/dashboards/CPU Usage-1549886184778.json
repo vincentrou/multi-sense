@@ -69,7 +69,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "CPU Usage",
+          "measurement": "cpu_load",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -169,7 +169,7 @@
     ]
   },
   "timezone": "",
-  "title": "CPU Usage",
+  "title": "CPU Load",
   "uid": "OwisVIuiz",
   "version": 3
 }
