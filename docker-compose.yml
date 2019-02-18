@@ -33,3 +33,13 @@ services:
     depends_on:
       - influxdb
       - grafana
+  ads1115:
+    build: ./sensors/ads1115
+    devices:
+      - "/dev/i2c-1"
+    restart: always
+    environment:
+      - INFLUX_HOST=influxdb
+    depends_on:
+      - influxdb
+      - grafana

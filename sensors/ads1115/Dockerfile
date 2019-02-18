@@ -7,4 +7,4 @@ WORKDIR /usr/src/app
 
 RUN python3 -m pip install -r requirements.txt
 
-CMD ["python3", "/usr/src/app/cpu_load.py"]
+CMD ["python3", "/usr/src/app/ads1115_influx.py"]
