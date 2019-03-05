@@ -14,10 +14,14 @@ adc = ads1115_lib.ADS1115()
 
 # Add timestamp to measurement
 # Accumulate measurement to write multiples points
+interval = 0.1
 measurement = []
+measurement_lock = threading.Lock()
+start_time = time.time()
 
 def getMeasurements():
-    new_measurement = {
+    while True:
+        new_measurement = {
             'measurement': 'ads1115',
             'time': datetime.now(),
             'fields': {
@@ -27,12 +31,18 @@ def getMeasurements():
                 'ain3': adc.readADCSingleEnded(channel=3, pga=1024, sps=16)
             }
         }
-    measurement.append(new_measurement)
+        with measurement_lock:
+            measurement.append(new_measurement)
+        time.sleep(interval - (time.time() - start_time) % interval)
 
-threading.Timer(0.1, getMeasurements).start()
+t = threading.Thread(target=getMeasurements)
+t.start()
 
 while True:
-    influx_client.write_points(measurement)
-    measurement.clear()
-    time.sleep(1)
+    with measurement_lock:
+        influx_client.write_points(measurement)
+        measurement.clear()
+    time.sleep(10)
+
+t.join()
 
