@@ -1,20 +1,36 @@
 version: '3'
 volumes:
-  persitent-storage:
+  influxdb-storage:
+  grafana-storage:
 services:
   influxdb:
     image: influxdb:1.7
     restart: always
+    ports:
+      - "8086:8086"
+    volumes:
+      - 'influxdb-storage:/var/lib/influxdb'
   grafana:
     image: grafana/grafana:5.4.3
     restart: always
     ports:
       - "3000:3000"
     volumes:
-      - 'persitent-storage:/var/lib/grafana'
+      - 'grafana-storage:/var/lib/grafana'
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
       - ./grafana/config.monitoring
+  influx_to_csv:
+    build: ./influxdb
+    restart: always
+    volumes:
+      - ./data/:/var/lib/csv/
+    environment:
+      - INFLUX_HOST=influxdb
+      - CSV_FOLDER_PATH=/var/lib/csv/
+    depends_on:
+      - influxdb
+      - grafana
   cpu_load:
     build: ./sensors/cpu_load
     restart: always
