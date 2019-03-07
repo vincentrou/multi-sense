@@ -1,8 +1,7 @@
 apiVersion: 1
 providers:
-  - name: 'CPU load'
+  - name: 'Multi sense'
     orgId: 1
-    folder: ''
     type: file
     options:
-      folder: /etc/grafana/provisioning/dashboards
+      path: /etc/grafana/provisioning/dashboards
