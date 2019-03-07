@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "panels": [
     {
@@ -77,7 +76,7 @@
             [
               {
                 "params": [
-                  "temperature"
+                  "humidity"
                 ],
                 "type": "field"
               },
@@ -193,7 +192,7 @@
             [
               {
                 "params": [
-                  "humidity"
+                  "temperature"
                 ],
                 "type": "field"
               },
@@ -372,7 +371,7 @@
         "#d44a3a"
       ],
       "datasource": "Influxdb",
-      "decimals": null,
+      "decimals": 1,
       "format": "celsius",
       "gauge": {
         "maxValue": 30,
@@ -424,20 +423,7 @@
       "tableColumn": "mean",
       "targets": [
         {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
-            }
-          ],
+          "groupBy": [],
           "measurement": "bme280",
           "orderByTime": "ASC",
           "policy": "default",
@@ -450,10 +436,6 @@
                   "temperature"
                 ],
                 "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
               }
             ]
           ],
@@ -461,7 +443,7 @@
         }
       ],
       "thresholds": "21,27",
-      "title": "Current temperature",
+      "title": "Mean temperature",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -474,6 +456,7 @@
       "valueName": "avg"
     }
   ],
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -481,7 +464,7 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -512,5 +495,5 @@
   "timezone": "",
   "title": "bme280",
   "uid": "53KHnPWgz",
-  "version": 7
+  "version": 1
 }
