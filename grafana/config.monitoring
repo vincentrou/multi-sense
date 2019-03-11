@@ -1,4 +1,5 @@
 GF_AUTH_ANONYMOUS_ENABLED=true
+GF_SERVER_DOMAIN=rasp-phai7
 GF_SMTP_ENABLED=true
 GF_SMTP_HOST=partage.irstea.fr:25
 GF_SMTP_USER=sos-info-clermont@irstea.fr
