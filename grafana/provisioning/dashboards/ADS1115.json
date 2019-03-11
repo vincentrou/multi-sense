@@ -15,10 +15,42 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 4,
+  "id": 6,
   "links": [],
   "panels": [
     {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [],
+              "type": "no_value"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "1m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "name": "ADC alert",
+        "noDataState": "no_data",
+        "notifications": []
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -280,7 +312,7 @@
     ]
   },
   "timezone": "",
-  "title": "ADS1115",
-  "uid": "P9BElmRgk",
-  "version": 3
+  "title": "ADS1115 Alert !",
+  "uid": "214fkQkRz",
+  "version": 2
 }
