@@ -39,6 +39,9 @@ t = threading.Thread(target=getMeasurements)
 t.start()
 
 while True:
+    if t.isAlive() == False:
+        print("Exiting acquisition thread died")
+        exit()
     with measurement_lock:
         influx_client.write_points(measurement)
         measurement.clear()
