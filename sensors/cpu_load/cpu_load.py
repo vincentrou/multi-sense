@@ -2,6 +2,10 @@ import time
 import os
 import psutil
 from influxdb import InfluxDBClient
+from random import uniform
+
+# Start sensors at different time after
+time.sleep(uniform(10,60))
 
 influx_host = os.getenv('INFLUX_HOST', 'localhost')
 influx_dbname = os.getenv('INFLUX_DBNAME', 'multi-sense')

@@ -3,6 +3,10 @@ import os
 import smbus2
 import bme280
 from influxdb import InfluxDBClient
+from random import uniform
+
+# Start sensors at different time after
+time.sleep(uniform(10,60))
 
 influx_host = os.getenv('INFLUX_HOST', 'localhost')
 influx_dbname = os.getenv('INFLUX_DBNAME', 'multi-sense')
@@ -27,5 +31,5 @@ while True:
         }
     ]
     influx_client.write_points(measurement)
-    time.sleep(1)
+    time.sleep(10)
 
