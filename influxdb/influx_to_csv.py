@@ -7,10 +7,9 @@ import csv
 from influxdb import InfluxDBClient
 
 influx_host = os.getenv("INFLUX_HOST", "localhost")
-influx_client = InfluxDBClient(host=influx_host, database="cpu-sense")
-influx_client.create_database("cpu-sense")
+influx_client = InfluxDBClient(host=influx_host, database="multi-sense")
 
-write_time_interval = 20
+write_time_interval = 60
 start_time = datetime.utcnow()
 begin = start_time - timedelta(seconds=100)
 end = begin + timedelta(seconds=write_time_interval)
@@ -22,7 +21,7 @@ data_folder.mkdir(parents=True, exist_ok=True)
 while True:
     begin += timedelta(seconds=write_time_interval)
     end += timedelta(seconds=write_time_interval)
-    query = 'select * from "CPU Usage" where time > \'' + begin.isoformat() + "Z' AND time <= '" + end.isoformat() + "Z' tz('Europe/Paris')"
+    query = 'select * from "bme280" where time > \'' + begin.isoformat() + "Z' AND time <= '" + end.isoformat() + "Z' tz('Europe/Paris')"
     result = influx_client.query(query, epoch="ms")
 
     try:
@@ -31,7 +30,7 @@ while True:
         print('Influxdb result query is empty')
     else:
         file_date = datetime.now().strftime('%Y_%m_%d_%H_%M')
-        file_name = data_folder/str('cpu_data_' + file_date + '.csv')
+        file_name = data_folder/str('bme280_' + file_date + '.csv')
         with file_name.open('a') as csvfile:
             fieldnames = list(next(result.get_points()).keys())
             writer = csv.DictWriter(csvfile, fieldnames)
