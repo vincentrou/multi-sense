@@ -7,4 +7,4 @@ COPY requirements.txt /usr/src/app
 RUN python3 -m pip install -r requirements.txt
 
 COPY cpu_load.py /usr/src/app
-CMD ["python3", "/usr/src/app/cpu_load.py"]
+CMD ["python3", "-u", "/usr/src/app/cpu_load.py"]
