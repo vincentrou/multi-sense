@@ -10,6 +10,11 @@ services:
       - "8086:8086"
     volumes:
       - 'influxdb-storage:/var/lib/influxdb'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "4"        
   grafana:
     image: grafana/grafana:5.4.3
     restart: always
