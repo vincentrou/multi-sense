@@ -28,6 +28,7 @@ def getMeasurements():
     while True:
         new_measurement = {
             'measurement': 'ads1115',
+            # attention la date n'est pas forcément précise
             'time': datetime.now(),
             'fields': {
                 'ain0': adc.readADCSingleEnded(),
