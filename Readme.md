@@ -1,3 +1,5 @@
+Faire soit l'installation Docker (conseillé) soit l'installation Manuelle :
+
 # Docker
 
 * ## Installation
