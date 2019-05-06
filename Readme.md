@@ -6,11 +6,14 @@ Faire soit l'installation Docker (conseillé) soit l'installation Manuelle :
 
 ### Docker
 
-https://docs.docker.com/install/linux/docker-ce/ubuntu/
+https://docs.docker.com/install/linux/docker-ce/debian/#install-using-the-convenience-script
 
 ### Docker compose
 
-https://docs.docker.com/compose/install/
+https://docs.docker.com/compose/install/#install-using-pip
+
+Utiliser _pip_ pour l'installation :
+`sudo pip install docker-compose`
 
 * ## Use the code
 
