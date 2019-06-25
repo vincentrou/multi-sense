@@ -29,3 +29,5 @@ Utiliser _pip_ pour l'installation :
 * pwd : admin
 * Ajouter une source de donnée influxdb avec comme nom de base de donnée "multi-sense"
 * Ajouter un graphique pour afficher les données dans le temps
+
+nouvelle info
